@@ -25,3 +25,4 @@ https://github.com/Skytliang/Multi-Agents-Debate
 https://www.marktechpost.com/2023/05/29/using-multi-agent-debate-for-improving-reasoning-and-factual-accuracy-of-large-language-models-llms/
 https://arxiv.org/abs/2305.19118
 https://cobusgreyling.medium.com/two-llm-based-autonomous-agents-debate-each-other-e13e0a54429b
+https://www.youtube.com/watch?v=N8p6u1OtARs

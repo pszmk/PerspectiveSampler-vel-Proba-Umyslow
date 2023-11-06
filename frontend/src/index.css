@@ -1,0 +1,45 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+html{ background: linear-gradient(left, #99a, #eee, #99a); }
+
+.page {
+  margin: 0 auto 0 -40px;
+  text-align: center;
+  padding: 1em 0;
+}
+
+.scroll {
+    height: 300px;
+    width: 40px;
+    overflow-y: scroll;
+    display: inline-block;
+
+    .inner{
+        height: 300%;
+        width: 100%;
+        content: '.';
+    }
+}
+
+.scroll::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background: var(--chakra-colors-gray-400);
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 1px 1px var(--chakra-colors-gray-700);
+    background: var(--chakra-colors-gray-900);
+}
+
+.scroll::-webkit-scrollbar-track {
+    background: var(--chakra-colors-gray-900);
+}

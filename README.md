@@ -20,6 +20,7 @@ Zestaw dziedzin oraz wchodzących w ich zakres zasadniczych problemów z przypor
 Reprezentacja problemu w postaci drzewa odpowiadającego ścieżkom dyskusji wyeksploatowanym przez użytkownika oraz społeczność. Użytkownik może analizować przebieg swoich poprzednich dyskusji. W części dedykowanej społeczności umożliwia tworzenie wątków wokół węzłów grafu i rozbudowę jego struktury.
 
 # Może przydatne linki
+- https://twitter.com/IntuitMachine/status/1709212785878462879
 - https://arxiv.org/abs/2308.07201
 - https://github.com/Skytliang/Multi-Agents-Debate
 - https://www.marktechpost.com/2023/05/29/using-multi-agent-debate-for-improving-reasoning-and-factual-accuracy-of-large-language-models-llms/

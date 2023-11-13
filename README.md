@@ -18,3 +18,25 @@ Zestaw dziedzin oraz wchodzących w ich zakres zasadniczych problemów z przypor
 
 ## Drzewo Perspektyw
 Reprezentacja problemu w postaci drzewa odpowiadającego ścieżkom dyskusji wyeksploatowanym przez użytkownika oraz społeczność. Użytkownik może analizować przebieg swoich poprzednich dyskusji. W części dedykowanej społeczności umożliwia tworzenie wątków wokół węzłów grafu i rozbudowę jego struktury.
+
+
+# Useful links
+## Debating LLM agents
+- LLMs debate agents with acces to external tools
+https://cobusgreyling.medium.com/two-llm-based-autonomous-agents-debate-each-other-e13e0a54429b
+- Long tutorial (over 2.5 h) on Advances in Debating Technologies: Building AI That Can Debate Humans presenting the architecture (pipeline of techniques) of the IBM Project Debater debating agent
+https://www.youtube.com/watch?v=XZxJalCD-fI
+
+## Prompting
+- David Shapiro presents briefly a couple of prompting techniques used to refine model output
+https://www.youtube.com/watch?v=N8p6u1OtARs
+
+## Inspiring applications of the debate mechanism in LLMs not debating chatbots per se though
+- SocraticAI: LLM instances solve a problem via mulitiagent debate with roles
+https://github.com/RunzheYang/SocraticAI
+- Chateval: LLM instances evaluate quality of the generated response of the model (it is not a debating model, but used the mechanism of a debate)
+https://chateval.org/
+https://arxiv.org/abs/2308.07201
+- MAD framework: mechanism for self improvement of the model (understood as the conglomerate of the debaters) used to refine an answear
+https://github.com/Skytliang/Multi-Agents-Debate
+https://arxiv.org/abs/2305.19118

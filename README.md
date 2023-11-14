@@ -28,7 +28,7 @@ https://cobusgreyling.medium.com/two-llm-based-autonomous-agents-debate-each-oth
 https://www.youtube.com/watch?v=XZxJalCD-fI
 
 ## Prompting
-- David Shapiro presents briefly a couple of prompting techniques used to refine model output
+- David Shapiro presents briefly a couple of prompting techniques used to refine model output and shows how to make them a part of model querying
 https://www.youtube.com/watch?v=N8p6u1OtARs
 
 ## Inspiring applications of the debate mechanism in LLMs not debating chatbots per se though

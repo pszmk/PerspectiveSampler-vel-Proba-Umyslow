@@ -40,3 +40,7 @@ https://arxiv.org/abs/2308.07201
 - MAD framework: mechanism for self improvement of the model (understood as the conglomerate of the debaters) used to refine an answear
 https://github.com/Skytliang/Multi-Agents-Debate
 https://arxiv.org/abs/2305.19118
+
+# Other
+- AutoGen
+https://github.com/microsoft/autogen#autogen

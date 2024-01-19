@@ -17,15 +17,14 @@ enum Side {
 
 export function Chat() {
 	return (
-		<div key="1" className="bg-[#1E1E2D] h-screen flex flex-col">
-			<section className="w-full bg-[#2D303E] p-1">
+		<div key="1" className="dark bg-muted h-screen flex flex-col">
+			<section className="w-full bg-neutral p-1">
 				<header className="flex justify-between items-center mb-2">
 					<h2 className="flex-grow break-words ml-2 text-white text-sm font-semibold">
-						Discussing Project Milestones Discussing Project Milestones
-						Discussing Project Milestones Discussing Project Milestones
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
 					</h2>
-					<div className="flex items-center space-x-2">
-						<Select className="w-24">
+					<div className="light flex items-center space-x-2">
+						<Select>
 							<SelectTrigger className="w-full">
 								<SelectValue placeholder="Select bot" />
 							</SelectTrigger>
@@ -42,26 +41,26 @@ export function Chat() {
 				<ScrollArea className="flex-grow mb-6">
 					<div className="space-y-4">
 						<Message
-							content="How does it sound for you?"
-							backgroundColor="#6C5DD3"
+							content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum?"
+							backgroundColor="bg-primary"
 							textColor="text-white"
 							side={Side.Right}
 						/>
 						<Message
-							content="Yes, that sounds good!"
-							backgroundColor="#353945"
+							content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum!"
+							backgroundColor="bg-secondary"
 							textColor="text-white"
 							side={Side.Left}
 						/>
 						<Message
-							content="How does it sound for you?"
-							backgroundColor="#6C5DD3"
+							content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum?"
+							backgroundColor="bg-primary"
 							textColor="text-white"
 							side={Side.Right}
 						/>
 						<Message
-							content="Yes, that sounds good!"
-							backgroundColor="#353945"
+							content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
+							backgroundColor="bg-secondary"
 							textColor="text-white"
 							side={Side.Left}
 						/>
@@ -69,14 +68,14 @@ export function Chat() {
 				</ScrollArea>
 				<div className="flex items-center space-x-2">
 					<Input
-						className="flex-1"
+						className="light flex-1"
 						placeholder="Type your message here..."
 						type="text"
 					/>
-					<Button className="bg-[#6C5DD3] text-white">
+					<Button className="bg-accent text-white">
 						<SendIcon />
 					</Button>
-					<Button className="bg-[#cd3435] text-white">
+					<Button className="bg-destructive text-white">
 						<TrashIcon />
 					</Button>
 				</div>
@@ -103,9 +102,7 @@ function Message({ content, backgroundColor, textColor, side }: MessageProps) {
 					src="/avatar_placeholder.svg?height=40&width=40"
 				/>
 			</Avatar>
-			<div
-				className={`rounded-lg p-2 bg-[${backgroundColor}] ${textColor} text-sm`}
-			>
+			<div className={`rounded-lg ${backgroundColor} p-2 ${textColor} text-sm`}>
 				{content}
 			</div>
 		</div>

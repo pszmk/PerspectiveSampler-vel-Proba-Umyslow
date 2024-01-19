@@ -4,8 +4,24 @@
 
 @layer base {
   :root {
+    @apply light;
+  }
+
+  .light {
     --background: hsl(0, 0%, 100%);
     --foreground: hsl(224, 71.4%, 4.1%);
+
+    --primary: #6C5DD3;
+    --primary-foreground: var(--background);
+
+    --card: var(--background);
+    --card-foreground: var(--foreground);
+
+    --popover: var(--background);
+    --popover-foreground: var(--foreground);
+
+    --secondary: #d555bc;
+    --secondary-foreground: var(--background);
 
     --card: hsl(0, 0%, 100%);
     --card-foreground: hsl(224, 71.4%, 4.1%);
@@ -13,17 +29,11 @@
     --popover: hsl(0, 0%, 100%);
     --popover-foreground: hsl(224, 71.4%, 4.1%);
 
-    --primary: hsl(220.9, 39.3%, 11%);
-    --primary-foreground: hsl(210, 20%, 98%);
-
-    --secondary: hsl(220, 14.3%, 95.9%);
-    --secondary-foreground: hsl(220.9, 39.3%, 11%);
-
     --muted: hsl(220, 14.3%, 95.9%);
     --muted-foreground: hsl(220, 8.9%, 46.1%);
 
-    --accent: hsl(220, 14.3%, 95.9%);
-    --accent-foreground: hsl(220.9, 39.3%, 11%);
+    --accent: var(--primary);
+    --accent-foreground: var(--primary-foreground);
 
     --destructive: hsl(0, 84.2%, 60.2%);
     --destructive-foreground: hsl(210, 20%, 98%);
@@ -39,26 +49,11 @@
     --background: hsl(224, 71.4%, 4.1%);
     --foreground: hsl(210, 20%, 98%);
 
-    --card: hsl(224, 71.4%, 4.1%);
-    --card-foreground: hsl(210, 20%, 98%);
+    --muted: #1E1E2D;
+    --muted-foreground: var(--foreground);
 
-    --popover: hsl(224, 71.4%, 4.1%);
-    --popover-foreground: hsl(210, 20%, 98%);
-
-    --primary: hsl(210, 20%, 98%);
-    --primary-foreground: hsl(220.9, 39.3%, 11%);
-
-    --secondary: hsl(215, 27.9%, 16.9%);
-    --secondary-foreground: hsl(210, 20%, 98%);
-
-    --muted: hsl(215, 27.9%, 16.9%);
-    --muted-foreground: hsl(217.9, 10.6%, 64.9%);
-
-    --accent: hsl(215, 27.9%, 16.9%);
-    --accent-foreground: hsl(210, 20%, 98%);
-
-    --destructive: hsl(0, 62.8%, 30.6%);
-    --destructive-foreground: hsl(210, 20%, 98%);
+    --neutral: #2D303E;
+    --neutral-foreground: var(--foreground);
 
     --border: hsl(215, 27.9%, 16.9%);
     --input: hsl(215, 27.9%, 16.9%);
@@ -73,4 +68,20 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+.bg-muted {
+  background-color: var(--muted);
+}
+
+.bg-neutral {
+  background-color: var(--neutral);
 }

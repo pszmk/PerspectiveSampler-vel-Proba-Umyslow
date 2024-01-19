@@ -7,15 +7,15 @@ import { CardContent, Card } from "@/components/ui/card";
 
 export function Homepage() {
 	return (
-		<div className="dark bg-[#1F2937] min-h-screen flex flex-col">
-			<header className="flex justify-between items-center p-6 bg-[#4B5563] text-white rounded-none">
+		<div className="dark bg-background min-h-screen flex flex-col">
+			<header className="flex justify-between items-center p-6 bg-muted text-white rounded-none">
 				<h1 className="text-3xl font-semibold">Welcome to Our Platform</h1>
 				<Link className="text-white text-sm underline" href="#">
 					Explore More
 				</Link>
 			</header>
 			<main className="flex-1 p-6">
-				<section className="mb-6 bg-[#374151] p-6 rounded-none flex flex-col md:flex-row">
+				<section className="mb-6 bg-neutral p-6 rounded-none flex flex-col md:flex-row">
 					<div className="w-full md:w-1/2">
 						<img
 							className="mb-4 md:mb-0"
@@ -40,7 +40,7 @@ export function Homepage() {
 						</p>
 					</div>
 				</section>
-				<section className="mb-6 bg-[#1F2937] p-6 rounded-none flex flex-col md:flex-row-reverse">
+				<section className="mb-6 bg-neutral p-6 rounded-none flex flex-col md:flex-row-reverse">
 					<div className="w-full md:w-1/2">
 						<img
 							className="mb-4 md:mb-0"
@@ -66,7 +66,7 @@ export function Homepage() {
 						</p>
 					</div>
 				</section>
-				<section className="mb-6 bg-[#374151] p-6 rounded-none flex flex-col md:flex-row">
+				<section className="mb-6 bg-neutral p-6 rounded-none flex flex-col md:flex-row">
 					<div className="w-full md:w-1/2">
 						<img
 							className="mb-4 md:mb-0"
@@ -83,7 +83,7 @@ export function Homepage() {
 						<h2 className="text-[#D1D5DB] text-2xl font-semibold mb-4">
 							Our Service
 						</h2>
-						<Card className="bg-[#1F2937] shadow-lg rounded-none">
+						<Card className="bg-primary shadow-lg rounded-none">
 							<CardContent>
 								<h3 className="text-[#D1D5DB] text-lg mb-2">Service 1</h3>
 								<p className="text-gray-400 text-sm">
@@ -93,7 +93,7 @@ export function Homepage() {
 						</Card>
 					</div>
 				</section>
-				<section className="mb-6 bg-[#1F2937] p-6 rounded-none flex flex-col md:flex-row-reverse">
+				<section className="mb-6 bg-neutral p-6 rounded-none flex flex-col md:flex-row-reverse">
 					<div className="w-full md:w-1/2">
 						<img
 							className="mb-4 md:mb-0"

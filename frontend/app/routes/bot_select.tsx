@@ -10,5 +10,5 @@ export const meta: MetaFunction = () => {
 };
 
 export default function ChatPage() {
-	return <Chat>{[<Messenger />]}</Chat>;
+	return <Chat>{[<BotSelect />]}</Chat>;
 }

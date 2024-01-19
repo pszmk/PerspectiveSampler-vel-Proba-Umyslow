@@ -15,70 +15,100 @@ enum Side {
 	Right = "right",
 }
 
-export function Chat() {
+export function BotSelect() {
 	return (
-		<div key="1" className="dark bg-muted h-screen flex flex-col">
-			<section className="w-full bg-neutral p-1">
-				<header className="flex justify-between items-center mb-2">
-					<h2 className="flex-grow break-words ml-2 text-white text-sm font-semibold">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-					</h2>
-					<div className="light flex items-center space-x-2">
-						<Select>
-							<SelectTrigger className="w-full">
-								<SelectValue placeholder="Select bot" />
-							</SelectTrigger>
-							<SelectContent>
-								<SelectItem value="bot1">Bot 1</SelectItem>
-								<SelectItem value="bot2">Bot 2</SelectItem>
-								<SelectItem value="bot3">Bot 3</SelectItem>
-							</SelectContent>
-						</Select>
-					</div>
+		<div className="flex-grow flex flex-col items-center justify-center">
+			{/* <div className="rounded-lg w-full pt-5 pb-5 pl-2 pr-2 bg-neutral flex flex-col items-center"> */}
+			<h1 className="text-4xl text-white font-bold mb-4">Welcome!</h1>
+			<section className="max-w-80 w-full p-1 flex items-center">
+				<header className="flex-grow light  space-x-2 mb-2">
+					<Select
+						onValueChange={() => {
+							// TODO: Navigate to /chat using the router
+							location.href = "/chat";
+						}}
+					>
+						<SelectTrigger className="w-full">
+							<SelectValue placeholder="Select bot" />
+						</SelectTrigger>
+						<SelectContent>
+							<SelectItem value="bot1" className="hover:bg-primary">
+								Bot 1
+							</SelectItem>
+							<SelectItem value="bot2" className="hover:bg-primary">
+								Bot 2
+							</SelectItem>
+							<SelectItem value="bot3" className="hover:bg-primary">
+								Bot 3
+							</SelectItem>
+						</SelectContent>
+					</Select>
 				</header>
 			</section>
-			<section className="flex-grow flex flex-col flex-1 p-6">
-				<ScrollArea className="flex-grow mb-6">
-					<div className="space-y-4">
-						<Message
-							content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum?"
-							backgroundColor="bg-primary"
-							textColor="text-white"
-							side={Side.Right}
-						/>
-						<Message
-							content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum!"
-							backgroundColor="bg-secondary"
-							textColor="text-white"
-							side={Side.Left}
-						/>
-						<Message
-							content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum?"
-							backgroundColor="bg-primary"
-							textColor="text-white"
-							side={Side.Right}
-						/>
-						<Message
-							content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
-							backgroundColor="bg-secondary"
-							textColor="text-white"
-							side={Side.Left}
-						/>
+			{/* </div> */}
+		</div>
+	);
+}
+
+export function Messenger() {
+	return (
+		<div className="flex flex-1 flex-col">
+			<ScrollArea className="flex-grow mb-6">
+				<div className="space-y-4">
+					<div className="w-full max-w-25 rounded-lg bg-neutral font-semibold p-4 text-white text-sm">
+						<div className="text-gray-400 font-light italic">
+							Discussion topic:
+						</div>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
 					</div>
-				</ScrollArea>
-				<div className="flex items-center space-x-2">
-					<Input
-						className="light flex-1"
-						placeholder="Type your message here..."
-						type="text"
+					<Message
+						content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum?"
+						backgroundColor="bg-primary"
+						textColor="text-white"
+						side={Side.Right}
 					/>
-					<Button className="bg-accent text-white">
-						<SendIcon />
-					</Button>
-					<Button className="bg-destructive text-white">
-						<TrashIcon />
-					</Button>
+					<Message
+						content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum!"
+						backgroundColor="bg-secondary"
+						textColor="text-white"
+						side={Side.Left}
+					/>
+					<Message
+						content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum?"
+						backgroundColor="bg-primary"
+						textColor="text-white"
+						side={Side.Right}
+					/>
+					<Message
+						content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
+						backgroundColor="bg-secondary"
+						textColor="text-white"
+						side={Side.Left}
+					/>
 				</div>
+			</ScrollArea>
+			<div className="flex items-center space-x-2">
+				<Input
+					className="light flex-1"
+					placeholder="Type your message here..."
+					type="text"
+				/>
+				<Button className="bg-accent text-white">
+					<SendIcon />
+				</Button>
+				<Button className="bg-destructive text-white">
+					<TrashIcon />
+				</Button>
+			</div>
+		</div>
+	);
+}
+
+export function Chat(props: { children: JSX.Element[] }) {
+	return (
+		<div key="1" className="dark bg-muted h-screen flex flex-col">
+			<section className="flex-grow flex flex-col flex-1 p-6">
+				{props.children}
 			</section>
 		</div>
 	);
@@ -95,7 +125,7 @@ function Message({ content, backgroundColor, textColor, side }: MessageProps) {
 	const flex_direction = side === Side.Left ? "flex-row" : "flex-row-reverse";
 	const avatar_margin = side === Side.Left ? "mr-2" : "ml-2";
 	return (
-		<div className={`flex flex-1 items-end float-${side} ${flex_direction}`}>
+		<div className={`flex flex-1 items-center float-${side} ${flex_direction}`}>
 			<Avatar className={avatar_margin}>
 				<AvatarImage
 					alt="Russel Hue"

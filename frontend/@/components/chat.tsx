@@ -9,7 +9,6 @@ import {
 	SelectContent,
 	Select,
 } from "@/components/ui/select";
-import { Send } from "lucide-react";
 
 enum Side {
 	Left = "left",

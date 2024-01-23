@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    @apply light;
+  }
+
+  .light {
+    --background: hsl(0, 0%, 100%);
+    --foreground: hsl(224, 71.4%, 4.1%);
+
+    --primary: #6C5DD3;
+    --primary-foreground: var(--background);
+
+    --card: var(--background);
+    --card-foreground: var(--foreground);
+
+    --popover: var(--background);
+    --popover-foreground: var(--foreground);
+
+    --secondary: #d555bc;
+    --secondary-foreground: var(--background);
+
+    --card: hsl(0, 0%, 100%);
+    --card-foreground: hsl(224, 71.4%, 4.1%);
+
+    --popover: hsl(0, 0%, 100%);
+    --popover-foreground: hsl(224, 71.4%, 4.1%);
+
+    --muted: hsl(220, 14.3%, 95.9%);
+    --muted-foreground: hsl(220, 8.9%, 46.1%);
+
+    --accent: var(--primary);
+    --accent-foreground: var(--primary-foreground);
+
+    --destructive: hsl(0, 84.2%, 60.2%);
+    --destructive-foreground: hsl(210, 20%, 98%);
+
+    --border: hsl(220, 13%, 91%);
+    --input: hsl(220, 13%, 91%);
+    --ring: hsl(224, 71.4%, 4.1%);
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: hsl(224, 71.4%, 4.1%);
+    --foreground: hsl(210, 20%, 98%);
+
+    --muted: #1E1E2D;
+    --muted-foreground: var(--foreground);
+
+    --neutral: #2D303E;
+    --neutral-foreground: var(--foreground);
+
+    --border: hsl(215, 27.9%, 16.9%);
+    --input: hsl(215, 27.9%, 16.9%);
+    --ring: hsl(216, 12.2%, 83.9%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+.bg-muted {
+  background-color: var(--muted);
+}
+
+.bg-neutral {
+  background-color: var(--neutral);
+}

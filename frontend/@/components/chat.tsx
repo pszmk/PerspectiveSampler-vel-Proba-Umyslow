@@ -26,35 +26,78 @@ enum Side {
   Right = "right",
 }
 
+const debates = [
+  {
+    avatar: "/thatcher_avatar.png?height=50&width=50",
+    topic:
+      "Navigating Progress: The Role of Individual Ambition and Government Support",
+    description:
+      "Delve into the intricate interplay between personal initiative and state involvement in shaping a nation's journey towards progress and prosperity.",
+    personName: "Margaret Thatcher",
+  },
+  {
+    avatar: "/jefferson.png?height=50&width=50",
+    topic: "Liberty or Order: The Balancing Act",
+    description:
+      "Debate the fine line between maintaining order and upholding personal freedoms, reflecting Jefferson's advocacy for individual rights and limited government.",
+    personName: "Thomas Jefferson",
+  },
+  {
+    avatar: "/tesla.png?height=50&width=50",
+    topic: "Innovation or Regulation: Steering Technological Progress",
+    description:
+      "Debate the role of innovation and regulation in technological advancement, considering Tesla's groundbreaking inventions and his challenges with patents and corporate control.",
+    personName: "Nikola Tesla",
+  },
+  {
+    avatar: "/gandhi.png?height=50&width=50",
+    topic: "Cultural Evolution: Tradition vs. Modernization",
+    description:
+      "Contemplate the balance between preserving cultural traditions and embracing modernity, drawing insights from Gandhi's philosophy of non-violent resistance and his views on societal progress.",
+    personName: "Mahatma Gandhi",
+  },
+  {
+    avatar: "/montessori.png?height=50&width=50",
+    topic: "Education and Enlightenment: Foundations of a Society",
+    description:
+      "Discuss the impact of educational philosophies on societal development and individual growth, inspired by Montessori's revolutionary approach to child-centric education.",
+    personName: "Maria Montessori",
+  },
+];
+
+const DebateTopic = ({ avatar, topic, personName, description }) => {
+  return (
+    <Link to="/chat">
+      <div className="w-full max-w-25 rounded-lg bg-neutral font-semibold p-4 text-white text-sm mb-5 flex items-center h-[180px]">
+        <div className="mr-5 flex flex-col items-center w-[80px]">
+          <Avatar>
+            <AvatarImage alt="Russel Hue" src={avatar} />
+          </Avatar>
+          <div className="text-gray-200 font-light mt-2 text-center">
+            {personName}
+          </div>
+        </div>
+        <div className="basis-0 grow">
+          <div className="mt-2">{topic}</div>
+          <div className="text-gray-400 font-light mt-2">{description}</div>
+        </div>
+      </div>
+    </Link>
+  );
+};
+
 export function BotSelect() {
   return (
     <div className="flex-grow flex flex-col items-center justify-center">
       {/* <div className="rounded-lg w-full pt-5 pb-5 pl-2 pr-2 bg-neutral flex flex-col items-center"> */}
       <h1 className="text-4xl text-white font-bold mb-4">Welcome!</h1>
-      <section className="max-w-80 w-full p-1 flex items-center">
-        <header className="flex-grow light  space-x-2 mb-2">
-          <Select
-            onValueChange={() => {
-              // TODO: Navigate to /chat using the router
-              location.href = "/chat";
-            }}
-          >
-            <SelectTrigger className="w-full">
-              <SelectValue placeholder="Select bot" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="bot1" className="hover:bg-primary">
-                Bot 1
-              </SelectItem>
-              <SelectItem value="bot2" className="hover:bg-primary">
-                Bot 2
-              </SelectItem>
-              <SelectItem value="bot3" className="hover:bg-primary">
-                Bot 3
-              </SelectItem>
-            </SelectContent>
-          </Select>
-        </header>
+      <h3 className="text-xl text-white font-bold mb-4">
+        Choose your debate topic:
+      </h3>
+      <section className="w-full p-1">
+        {debates.map((debate) => (
+          <DebateTopic key={debate.personName} {...debate} />
+        ))}
       </section>
       {/* </div> */}
     </div>
@@ -67,6 +110,7 @@ export function Messenger() {
   const timerRef = useRef(0);
   const [notifications, setNotifications] = useState(new Map());
   const isPositionedTop = true;
+  const [showMessage0, setShowMessage0] = useState(false);
   const [showMessage1, setShowMessage1] = useState(false);
   const [showMessage2, setShowMessage2] = useState(false);
 
@@ -92,6 +136,12 @@ export function Messenger() {
     }
   }, [showMessage1]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setShowMessage0(true);
+    }, 800);
+  }, []);
+
   const handleDispatchSuccess = React.useCallback(
     (message) => handleAddToast({ message, type: "success" }),
     [handleAddToast]
@@ -111,14 +161,16 @@ export function Messenger() {
             Navigating Progress: The Role of Individual Ambition and Government
             Support
           </div>
-          <Message
-            content="Should the future of a nation be shaped by the hands of its government or by the indomitable spirit of its people? This philosophy we discuss today is grounded in the belief that every individual, equipped with determination and resolve, deserves the freedom to forge their own destiny, unshackled by the burdens of an overreaching state. Shouldn't one's path in life be carved by personal ambition and hard work, rather than dictated by the circumstances of their birth?
+          {showMessage0 && (
+            <Message
+              content="Should the future of a nation be shaped by the hands of its government or by the indomitable spirit of its people? This philosophy we discuss today is grounded in the belief that every individual, equipped with determination and resolve, deserves the freedom to forge their own destiny, unshackled by the burdens of an overreaching state. Shouldn't one's path in life be carved by personal ambition and hard work, rather than dictated by the circumstances of their birth?
 			
 			And now, in the spirit of democratic dialogue and with a genuine respect for diverse viewpoints, I turn to my esteemed opponent. Will they argue for a path of dependence, or can they offer a vision that truly empowers the individual, uplifts societies, and honors the potential within each of us?"
-            backgroundColor="bg-secondary"
-            textColor="text-white"
-            side={Side.Left}
-          />
+              backgroundColor="bg-secondary"
+              textColor="text-white"
+              side={Side.Left}
+            />
+          )}
           {(showMessage1 || showMessage2) && (
             <Message
               content="Is the strength of a society solely derived from individual ambition, or does it also grow from our collective will and shared responsibilities? The philosophy presented by my opponent certainly champions individual freedom, but does it fully grasp the intricate tapestry of community and mutual support that binds us all?
@@ -240,7 +292,10 @@ export function Messenger() {
 
 export function Chat(props: { children: JSX.Element[] }) {
   return (
-    <div key="1" className="dark bg-muted h-screen flex flex-col">
+    <div
+      key="1"
+      className="dark bg-muted h-screen flex flex-col overflow-y-scroll"
+    >
       <section className="flex-grow flex flex-col flex-1 p-6 h-full">
         {props.children}
       </section>

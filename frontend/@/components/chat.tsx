@@ -204,7 +204,7 @@ export function Messenger() {
           onClick={() => {
             if (!showMessage1) {
               handleAddToast({
-                message: "Discovered a new Perpective!",
+                message: "Discovered a new Perspective!",
                 type: "success",
               });
             }

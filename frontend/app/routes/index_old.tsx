@@ -1,6 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Chat, Messenger, BotSelect } from "@/components/chat";
-import { BoxSelect } from "lucide-react";
+import { Homepage } from "@/components/homepage";
 
 export const meta: MetaFunction = () => {
 	return [
@@ -9,6 +8,6 @@ export const meta: MetaFunction = () => {
 	];
 };
 
-export default function ChatPage() {
-	return <Chat>{[<BotSelect />]}</Chat>;
+export default function Index() {
+	return Homepage();
 }

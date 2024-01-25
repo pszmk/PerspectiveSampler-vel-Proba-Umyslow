@@ -1,4 +1,4 @@
-# Próba Umysłów/Próbka Umysłów/Dystrybucja Umysłów/Rozkład Perspektyw/Perspective Sampler?
+# Próba Umysłów/Perspective Sampler
 "Próba Umysłów" wyposaża użytkowników w narzędzia krytycznego myślenia, promuje rozmowę opartą na szacunku, uporządkowanym toku myśli konfrontując na szeroki zakres tematów. W konsekwencji "Próba Umysłów" stanowi narzędzie na usługach umysłu zbiorowego ludzkości, wolności i jakości dysputy publicznej sprzyjające emancypacji umysłów z pęt fałszywego komfortu mentalnego.
 
 Jest to platforma przeznaczona do zwiększania kompetencji krytycznego, argumentacyjnego myślenia poprzez ekspozycję na zróżnicowany zasób przekonań, pomysłów, perspektyw i argumentów. Ekspozycja przebiega z aktywnym zaangażowaniem użytkownika w proces formułowania stwierdzeń oraz analizy ich słabości i osadzenia ich w szerszym kontekście światopoglądowym. Korzystanie z platformy umożliwia pewniejsze i pełniejsze oddawanie się kontemplacji, pielęgnację świadomego podejścia do poszanowania zróżnicowania myśli, poznania źródeł prądów myślowych w różnych dziedzinach i konfrontacji z ich reprezentatywnymi odpowiedziami na zasadnicze problemy dziedzinowe, a w konsekwencji głębszą samoidentyfikację, poznanie i rozszerzenie własnego rozkładu perspektyw.
@@ -40,7 +40,3 @@ https://arxiv.org/abs/2308.07201
 - MAD framework: mechanism for self improvement of the model (understood as the conglomerate of the debaters) used to refine an answear
 https://github.com/Skytliang/Multi-Agents-Debate
 https://arxiv.org/abs/2305.19118
-
-# Other
-- AutoGen
-https://github.com/microsoft/autogen#autogen
